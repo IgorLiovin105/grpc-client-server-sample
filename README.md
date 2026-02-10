@@ -68,9 +68,13 @@ export class AppController {
 	@GrpcMethod('MyService', 'MyMethod')
 	async myMethod(content: string): Promise<string> {
 		console.log(content)
-		return content
+		return content // Ваша реализация обработки данных, в примере вывод данных в консоль и возврат
 	}
 }
+```
+В конце необходимо запустить сервер
+```cmd
+nest start
 ```
 ## Настройки клиента ##
 Для начала работы необходимо прописать команду для Laravel приложения
@@ -123,14 +127,13 @@ final class MyService {
       private readonly GrpcurlClient $client
    ) {}
 
-   public function myMethod(): array
+   public function myMethod(string $content): array
    {
       return $this->client->call(
          protoDir: self::PROTO_DIR,
          protoFile: self::PROTO_FILE,
          method: 'my.MyService/MyMessage', // Ваш gRPC запроc
-         payload: $payload,
-         timeoutSeconds: $timeoutSeconds
+         payload: ['content' => $payload] // Ваш payload
       );
    }
 }
@@ -159,4 +162,8 @@ class MyController extends Controller
       ]);
    }
 }
+```
+В конце необходимо запустить сервер
+```cmd
+php artisan serve
 ```
