@@ -5,6 +5,7 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use App\Services\Grpc\GrpcurlClient;
 use App\Services\Grpc\HelloRpc;
+use App\Services\Grpc\FileRpc;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -21,6 +22,7 @@ class AppServiceProvider extends ServiceProvider
         });
 
         $this->app->singleton(HelloRpc::class);
+        $this->app->singleton(FileRpc::class);
     }
 
     /**

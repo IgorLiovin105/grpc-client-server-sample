@@ -9,5 +9,4 @@ Route::get('/', function () {
 });
 
 Route::get('/hello', [HelloController::class, 'sendHello']);
-Route::get('/debug', [HelloController::class, 'debugGrpcurl']);
 Route::post('/send-file', [FileController::class, 'sendFile']);

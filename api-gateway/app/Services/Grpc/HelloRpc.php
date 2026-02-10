@@ -2,7 +2,7 @@
 
 namespace App\Services\Grpc;
 
-class HelloRpc
+final class HelloRpc
 {
     private const PROTO_DIR  = 'D:/grpc/first/proto';
     private const PROTO_FILE = 'hello.proto';
