@@ -80,7 +80,7 @@ composer update
 В первую очередь настроим .env
 ```env
 GRPCURL_PATH=/path/to/grpcurl.exe # здесь укажите свой путь к grpcurl.exe
-GRPC_HOST=localhost # здесь укажите свой gRPC host
+GRPC_HOST=localhost:50051 # здесь укажите свой gRPC host
 ```
 Затем настроим AppServiceProvider
 ```php
