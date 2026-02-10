@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package file;
+
+service FileService {
+   rpc SendFile(SendFileRequest) returns (SendFileResponse);
+}
+
+message SendFileRequest {
+   string filename = 1;
+   string mime     = 2;
+   bytes  data     = 3;
+}
+
+message SendFileResponse {
+   bool ok = 1;
+   string filename = 2;
+   string path = 3;
+   string url = 4;
+   uint64 size = 5;
+   string mime = 6;
+   string error = 7;
+}
