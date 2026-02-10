@@ -35,7 +35,7 @@ export class AppController {
 
 		await fs.writeFile(fullPath, data);
 
-		const url = `${BASE_URL}/images/${encodeURIComponent(storedName)}`;
+		const url = `${BASE_URL}/files/${encodeURIComponent(storedName)}`;
 
 		const resposne = {
 			ok: true,
